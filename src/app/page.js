@@ -61,7 +61,7 @@ el.style.animation="glowPulse 2.5s infinite";
     <div className='set_width'> 
     <div>
       <div className='greet'>
-        <img className='image' width={"150px"} height={"150px"} src="/myimage.jpeg" alt="" />
+        <img className='image' width={"150px"} height={"150px"} src="https://itzfizz.com/wp-content/uploads/2024/09/black_logoitzfizz@2x-1.webp" alt="" />
         {/* <img src="https://static.naukimg.com/s/8/801/i/src/resources/svg/chat-emoji.1d26c5e5.svg" alt="" /> */}
         <h2>Ankur goyal</h2>
         <h2>W E L C O M E I T Z F I Z Z</h2>
