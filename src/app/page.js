@@ -63,7 +63,7 @@ el.style.animation="glowPulse 2.5s infinite";
       <div className='greet'>
         <img className='image' width={"150px"} height={"150px"} src="https://media.licdn.com/dms/image/v2/D4E0BAQGdBsP4M6YfQQ/company-logo_100_100/company-logo_100_100/0/1737824325164?e=2147483647&v=beta&t=HSLUz3zJC6gwsVZM1phLtfSSgVGd6bIIChMH3ZDVMuQ" alt="" />
         {/* <img src="https://static.naukimg.com/s/8/801/i/src/resources/svg/chat-emoji.1d26c5e5.svg" alt="" /> */}
-        <h2>Ankur goyal</h2>
+        <h2>Itzfizz Digital</h2>
         <h2>W E L C O M E I T Z F I Z Z</h2>
         <h2>Delivering modern, scalable, and high-performance web solutions for digital growth.</h2>
         <div className='buttons'>
@@ -306,7 +306,7 @@ secure CRUD REST APIs for complaint creation, status updates,
 and data management. Integrated authentication and protected
 routes. Deployed production-ready application using Next.js,
 Node.js, and MongoDB.</p>
-     <div className='product'>  <Link style={{textDecoration:'none',color:'black'}} href={"https://civic-complaint-system-i5w8.vercel.app/"}>  
+     <div className='product'>  <Link style={{textDecoration:'none',color:'black'}} href={":https://movie-assignment-black.vercel.app/"}>  
         check out
        </Link>      </div> 
       </div>
