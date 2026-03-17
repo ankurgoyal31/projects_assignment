@@ -61,7 +61,7 @@ el.style.animation="glowPulse 2.5s infinite";
     <div className='set_width'> 
     <div>
       <div className='greet'>
-        <img className='image' width={"150px"} height={"150px"} src="https://itzfizz.com/wp-content/uploads/2024/09/black_logoitzfizz@2x-1.webp" alt="" />
+        <img className='image' width={"150px"} height={"150px"} src="https://media.licdn.com/dms/image/v2/D4E0BAQGdBsP4M6YfQQ/company-logo_100_100/company-logo_100_100/0/1737824325164?e=2147483647&v=beta&t=HSLUz3zJC6gwsVZM1phLtfSSgVGd6bIIChMH3ZDVMuQ" alt="" />
         {/* <img src="https://static.naukimg.com/s/8/801/i/src/resources/svg/chat-emoji.1d26c5e5.svg" alt="" /> */}
         <h2>Ankur goyal</h2>
         <h2>W E L C O M E I T Z F I Z Z</h2>
