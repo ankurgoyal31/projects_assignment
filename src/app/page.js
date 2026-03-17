@@ -1,65 +1,373 @@
-import Image from "next/image";
+"use client"
+import Link from 'next/link';
+import React from 'react'
+import { store } from './back/sr';
+ import { useState,useEffect } from 'react';
+ const page = () => {
+  const [first, setfirst] = useState({name:'',email:'',description:''})
+  const handle = (e)=>{
+    setfirst({...first,[e.target.name]:e.target.value});
+  }
+  useEffect(() => {
+    let info =document.querySelector(".greet");
+    let about = document.querySelector(".center");
+    let learn = document.querySelectorAll(".learn");
+    let box = document.querySelectorAll(".box")
+    // console.log(info)
+    info.style.fontSize = "20px"
+    function change() {
+      if(window.scrollY>400){
+about.style.color = " #667688";
+about.style.fontSize = "18px";
+    }else {
+    about.style.color = "white";
+    about.style.fontSize = "16px";
+  }
+    if(window.scrollY>560){
+ learn.forEach(el=>{
+    el.style.color = "#f5f7f9";
+  });
+  box.forEach(el=>{
+el.style.animation="glowPulse 2.5s infinite"; 
+  }); 
 
-export default function Home() {
+ }else{
+    learn.forEach(el=>{
+    el.style.color = "#bd09ea";
+  });
+  box.forEach(el=>{
+    el.style.animation="none"; 
+
+   });
+  }
+     
+     }
+      window.addEventListener("scroll",change);
+    return ()=>window.removeEventListener("scroll",change)
+   
+   }, [])
+  
+  const send = ()=>{
+ try{
+  let y = store(first.name,first.email,first.description);
+  console.log(y)
+  alert("thankes for review....")
+ }catch{
+  return false
+ }
+  } 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.js file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <>
+    <div className='set_width'> 
+    <div>
+      <div className='greet'>
+        <img className='image' width={"150px"} height={"150px"} src="/myimage.jpeg" alt="" />
+        {/* <img src="https://static.naukimg.com/s/8/801/i/src/resources/svg/chat-emoji.1d26c5e5.svg" alt="" /> */}
+        <h2>Ankur goyal</h2>
+        <h2>W E L C O M E I T Z F I Z Z</h2>
+        <h2>Delivering modern, scalable, and high-performance web solutions for digital growth.</h2>
+        <div className='buttons'>
+         <Link style={{textDecoration:'none'}} href={"https://www.linkedin.com/in/ankur-goyal-535029320"}><div className='btn'> Linkdin </div></Link>  
+         <Link style={{textDecoration:'none'}} href={"https://github.com/ankurgoyal31/"}><div className='btn'> Github </div></Link>  
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+      </div>
+          <img  style={{backgroundSize:'cover',backgroundPosition:'center'}} className='setimage' width={"100%"} height={"700px"} src="https://blogs.mathworks.com/matlab/files/2024/02/animatingFlickbook_1.gif" alt="" />
+
+      {/* <img className='setimage' width={"100%"} height={"700px"} src="https://assets-v2.lottiefiles.com/a/4c271a64-1167-11ee-8ab3-67521f0ca529/Lq3stVUtsl.gif" alt="" /> */}
+       <div className='whole'>
+               </div>
+     </div>
+    <div className='main'> 
+      <div className='center'> 
+      <h1 className='title'>About  </h1>
+      <p>
+At Itzfizz Digital, we focus on delivering modern, scalable, and high-performance web solutions tailored to business needs. Our expertise lies in crafting intuitive user interfaces, smooth interactions, and efficient backend systems that work seamlessly together. We believe in combining design, technology, and performance to create digital experiences that drive growth and engagement.
+</p>
+With a strong emphasis on quality, innovation, and user experience, we help brands transform their ideas into impactful digital products. {/* <p>
+I have developed real-world projects including LLM-integrated chat applications, vector-based recommendation systems, complaint management platforms, and production-ready full-stack applications.
+</p>
+
+<p>
+I focus on writing clean, efficient code and building practical solutions that solve real problems.
+</p> */}
+</div>
+
+    <h3 className='title'>Our Expertise</h3> 
+    <div className='language'>
+     <div className='box'>
+      <div>
+        💹
+       </div>
+      <div>
+        java Script
+      </div>
+      <div className='learn'>
+        85%
+      </div>
     </div>
-  );
+     <div className='box'>
+      <div>
+📄</div>
+      <div>
+       Html
+      </div>
+      <div className='learn'>
+        80%
+      </div>
+    </div>
+     <div className='box'>
+      <div>
+🎨      </div>
+      <div>
+        Css
+      </div>
+      <div className='learn'>
+        75%
+      </div>
+    </div>
+    </div>
+    <h3 className='title'>Framworks</h3>
+    <div className='language'>
+         <div className='box'>
+      <div>
+        ⚛️
+      </div>
+      <div >
+        React js
+      </div>
+      <div className='learn'>
+        80%
+      </div>
+    </div>
+     <div className='box'>
+      <div>
+🟢      </div>
+      <div>
+       Node Js
+      </div>
+      <div className='learn'>
+        75%
+      </div>
+    </div>
+     <div className='box'>
+      <div>
+▲⚡
+      </div>
+      <div>
+       Next Js
+      </div>
+      <div className='learn'>
+        85%
+      </div>
+    </div>
+     <div className='box'>
+      <div>
+🚂      </div>
+      <div>
+        Express Js
+      </div>
+      <div className='learn'>
+        80%
+      </div>
+    </div>  
+     <div className='box'>
+      <div>
+🍃
+      </div>
+      <div>
+        Mongo Db
+      </div>
+      <div className='learn'>
+        75%
+      </div>
+    </div>
+    </div>
+     <h3 className='title'>AI / Generative AI</h3>
+<div className='language'> 
+        <div className='box'>
+      <div>
+🤖
+      </div>
+      <div>
+        LLM Integration
+      </div>
+      <div className='learn'>
+        75%
+      </div>
+    </div>  
+     <div className='box'>
+      <div>
+🌐
+      </div>
+      <div>
+       Groq API
+      </div>
+      <div className='learn'>
+        80%
+      </div>
+    </div>  
+         <div className='box'>
+      <div>
+🔢
+      </div>
+      <div>
+      Vector Embeddings
+      </div>
+      <div className='learn'>
+        85%
+      </div>
+      </div>
+      <div className='box'>
+      <div>
+🧮      </div>
+      <div>
+      vector database
+      </div>
+      <div className='learn'>
+        70%
+      </div>
+      </div>
+       <div className='box'>
+      <div>
+🔎      </div>
+      <div>
+       Semantic Search
+      </div>
+      <div className='learn'>
+        75%
+      </div>
+      </div>
+ </div>
+    <h3 className='title'>Projects</h3>
+    <div className='language'>
+       <div className='box2'>
+      
+      <h2>
+Complaint Management System
+      </h2>
+      <p>Developed a full-stack complaint tracking platform with role-based
+access control for users and admins. Designed and implemented
+secure CRUD REST APIs for complaint creation, status updates,
+and data management. Integrated authentication and protected
+routes. Deployed production-ready application using Next.js,
+Node.js, and MongoDB.</p>
+     <div className='product'>  <Link style={{textDecoration:'none',color:'black'}} href={"https://civic-complaint-system-i5w8.vercel.app/"}>  
+        check out
+       </Link>      </div> 
+      </div>
+       <div className='box2'>
+      
+      <h2>
+AI Movie Recommendation System
+      </h2>
+      <p>Built an embedding-based movie recommendation engine using
+Vector Embeddings and Pinecone. Integrated Groq LLM API
+for intelligent similarity search and dynamic results.
+Implemented secure authentication and deployed full-stack
+application using Next.js, Node.js, and MongoDB.</p>
+            <div className='product'>  <Link style={{textDecoration:'none',color:'black'}} href={"https://movie-recommand-two.vercel.app/"}>  
+        check out
+       </Link>      </div>
+      </div>
+       <div className='box2'>
+      
+      <h2>
+Event Management System    
+  </h2>
+  <p>Created a full-stack event platform where users can create
+custom events and generate downloadable event cards.
+Built secure REST APIs for event storage and management.
+Deployed production-ready application with MongoDB backend.</p>
+          <div className='product'>  <Link style={{textDecoration:'none',color:'black'}} href={"https://merried-henna.vercel.app/"}>  
+        check out
+       </Link>      </div>
+      </div>
+       <div className='box2'>
+       
+      <h2>
+Linktree Clone Website
+      </h2>
+      <p>Built a personalized profile link management platform.
+Users can create custom profile pages with multiple links.
+Implemented secure authentication and dynamic routing.
+Deployed full-stack app using Next.js and MongoDB.</p>
+          <div className='product'>  <Link style={{textDecoration:'none',color:'black'}} href={"https://link-tree-wine-phi.vercel.app/"}>  
+        check out
+       </Link>      </div>
+      </div>
+<div className='box2'>
+      
+      <h2>
+ Ai Movie Review System
+      </h2>
+      <p>Developed a full-stack complaint tracking platform with role-based
+access control for users and admins. Designed and implemented
+secure CRUD REST APIs for complaint creation, status updates,
+and data management. Integrated authentication and protected
+routes. Deployed production-ready application using Next.js,
+Node.js, and MongoDB.</p>
+     <div className='product'>  <Link style={{textDecoration:'none',color:'black'}} href={"https://civic-complaint-system-i5w8.vercel.app/"}>  
+        check out
+       </Link>      </div> 
+      </div>
+
+       <div className='box2'>
+       
+      <h2>
+AI Chatbot Application      </h2>
+      <p>Developed a real-time AI chatbot using LLM API integration.
+Implemented session handling and dynamic prompt processing.
+Designed backend APIs for request management and optimized
+response latency for better user interaction.</p>
+           <div className='product'>  <Link style={{textDecoration:'none',color:'black'}} href={"https://chat-beige-sigma.vercel.app/"}>  
+        check out
+       </Link>      </div>
+      </div>
+       <div className='box2'>
+      
+      <h2>
+        URL Shortener Application
+       </h2>
+      <p>Developed a full-stack URL shortening service that converts
+long URLs into short, shareable links. Implemented unique
+short code generation, redirection handling, and database
+storage using MongoDB. Built secure REST APIs and deployed
+the application with production-ready configuration.</p>
+         <div className='product'>  <Link style={{textDecoration:'none',color:'black'}} href={"https://short-run-virid.vercel.app/"}>  
+        check out
+       </Link>      </div>
+      </div>
+     </div>
+      </div>
+      <h2 className="title">Contact Me</h2>
+
+<div className="contact-container">
+  <form className="contact-form">
+    
+    <div className="input-group">
+      <label>Name</label>
+      <input name='name' value={first.name} onChange={handle}  type="text" placeholder="Enter your name" required />
+    </div>
+
+    <div className="input-group">
+      <label>Email</label>
+      <input name='email' value={first.email} onChange={handle} type="email" placeholder="Enter your email" required />
+    </div>
+
+    <div className="input-group">
+      <label>Message</label>
+      <textarea name='description' value={first.description} onChange={handle} rows="5" placeholder="Write your message..." required />
+    </div>
+
+    <button onClick={send} className="contact-btn">
+      Send Message 
+    </button>
+
+  </form>
+</div>
+</div>
+     </>
+  )
 }
+
+ export default page;
